@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { Address } from './address';
+import { Address } from './Address';
 import { map } from 'rxjs/operators';
 import { iteratorToArray } from '@angular/animations/browser/src/util';
 import { Observable } from 'rxjs';
@@ -11,13 +11,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent {
-
   private addresses: Address[] = [];
 
-  constructor(private service: BookService) { }
+  constructor(private service: BookService) {}
 
   getAll() {
-    console.log("STARTING");
+    console.log('STARTING');
     this.service.findAll().subscribe((data: Address[]) => {
       this.addresses = data;
     });
