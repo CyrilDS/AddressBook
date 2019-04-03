@@ -4,7 +4,7 @@
 <mat-list>
   <div *ngIf="addresses">
     <mat-list-item *ngFor="let address of addresses">
-      <h3 matLine>{{ address.codePostal }} {{ address.commune }}</h3>
+      <h3 matLine> {{address.codePostal}} {{address.nomCommune}}</h3>
     </mat-list-item>
   </div>
 </mat-list>
