@@ -1,8 +1,4 @@
-
-
 export class Address {
-
-    codePostal: string;
-    nomCommune: string;
-
+  codePostal: string;
+  nomCommune: string;
 }
