@@ -1,10 +1,10 @@
-# Frontend
+# Front-End Simplon's project from 01/04/2019 to 05/04/2019.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+## This project use Angular 7.3.7
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Open **AddressBook**
+Start project : **`ng serve** ou **npm start`**
+Open in browser : **`http://localhost:4200/`**
 
 ## Code scaffolding
 
@@ -18,11 +18,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+# Back-End
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## This project use Java 8
 
-## Further help
+Open **address-book-back** with **Eclipse**
+Run **`open project from file sytem`** and choose **address-book-back**.
+**`Run as Spring Boot App`**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-"# AddressBook" 
+## Team
+
+**Richard**
+**Cyril**
+**Remy**
+**Phillip**
+**Patricia**
+**David**
