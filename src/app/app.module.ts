@@ -9,11 +9,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent
+    BookComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatButtonModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
