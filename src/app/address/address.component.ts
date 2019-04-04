@@ -9,22 +9,34 @@ import { Locality } from './locality';
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.css']
 })
-export class AddressComponent implements OnInit {
-
-  localityModel = new Locality("", "");
-  addressModel = new Address("", "", "", "", "", "", this.localityModel);
-  
-  localities: Locality[];
-  private zipCode: string;
-  private city: string;
-
-  ngOnInit() { }
+export class AddressComponent {
 
   constructor(private service: AddressService, public dialog: MatDialog) { }
+
+  localities: Locality[];
+  locality = new Locality("", "");
+  addressModel = new Address("", "", "", "", "", "", this.locality);
+
+  public types = [
+    { value: 'PARTICULAR', display: 'Particular' },
+    { value: 'ENTERPRISE', display: 'Enterprise' }
+  ];
+
+  getInnerText(city) {
+    console.log(city)
+    this.locality.city = city;
+  }
+
+  eventHandler(zipCode: string) {
+    if (zipCode.length === 5) {
+      this.allCityByZipcode(zipCode);
+    }
+  }
 
   allCityByZipcode(zipCode: string) {
     this.service.getCity(zipCode).subscribe(
       data => {
+        this.locality.zipCode = zipCode;
         this.localities = data;
         console.log(data);
       }
@@ -32,7 +44,12 @@ export class AddressComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.create(this.addressModel);
+    console.log(this.addressModel)
+    this.service.create(this.addressModel).subscribe(
+      res => {
+        alert("STATUS: " + res);
+      }
+    );
   }
 
 

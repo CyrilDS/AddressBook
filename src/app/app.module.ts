@@ -19,6 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 import { AddressComponent } from './address/address.component';
@@ -51,7 +53,8 @@ import { HomeComponent } from './home/home.component';
     MatSelectModule,
     MatIconModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

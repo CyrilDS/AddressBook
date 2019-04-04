@@ -10,16 +10,14 @@ import { APIS } from './apis';
 })
 export class AddressService {
 
-
   constructor(private http: HttpClient) { }
 
   getCity(zipCode: string): Observable<Locality[]> {
     return this.http.get<Locality[]>(APIS.GET_CITY_BY_ZIPCODE + zipCode)
   }
 
-
-  create(address: Address) {
-    this.http.post<Address>(APIS.GET_CITY_BY_ZIPCODE, address);
+  create(address: Address): Observable<Response> {
+    return this.http.post<Response>(APIS.CREATE_ADDRESS, address);
   }
 
 }

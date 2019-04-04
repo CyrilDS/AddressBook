@@ -1,5 +1,5 @@
 export class Locality {
 
-    constructor(private zipCode: string, private city: string) { }
+    constructor(public zipCode: string, public city: string) { }
 
 }
