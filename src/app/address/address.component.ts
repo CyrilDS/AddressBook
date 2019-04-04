@@ -15,6 +15,7 @@ export class AddressComponent implements OnInit {
   localityModel = new Locality("", "");
   localities: Locality[];
   private zipCode: string;
+  private city: string;
 
   ngOnInit() { }
 

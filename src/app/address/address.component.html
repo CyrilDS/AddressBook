@@ -1,32 +1,3 @@
-<h2>TEST</h2>
-<div>
-
-  <form #localityForm='ngForm' novalidate>
-    <mat-form-field>
-      <input matInput required type="text" #zipCode="ngModel" class="form-control" name="zipCode"
-        [(ngModel)]="localityModel.zipCode">
-    </mat-form-field>
-
-
-    <button mat-raised-button color="primary" (click)="allCityByZipcode(localityModel.zipCode)">Primary</button>
-  </form>
-
-
-
-  {{localityForm.value | json }}
-  {{localityModel.value | json }}
-
-
-  <div *ngFor="let city of cities">
-    <h4> {{city.city}} </h4>
-  </div>
-
-
-
-</div>
-
-
-
 
 <h2 mat-dialog-title>Add a new address</h2>
 <mat-radio-group aria-label="Select an option">
@@ -76,24 +47,24 @@
           <mat-hint>Distribution Services is required</mat-hint>
         </mat-form-field>
       </p>
-      <p>
-        <mat-form-field>
-          <label>Zip Code</label>
-          <input matInput required type="text" #zipCode="ngModel" class="form-control" name="zipCode"
-            [(ngModel)]="addressModel.zipCode">
-          <mat-hint>zipCode complement is required</mat-hint>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field>
-          <mat-select required>
-            <mat-option value="option">City</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </p>
+      <div>
+        <form #localityForm='ngForm' novalidate>
+          <mat-form-field>
+            <input matInput required type="text" #zipCode="ngModel" class="form-control" name="zipCode"
+              [(ngModel)]="localityModel.zipCode">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="City">
+              <mat-option  *ngFor="let city of localities" value="option" [(ngModel)]="localityModel.city" #zipCode="ngModel" class="form-control" name="zipCode">{{city.nomCommune}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="allCityByZipcode(localityModel.zipCode)">Primary</button>
+        </form>
+      </div>
     </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button>Submit</button>
 </mat-dialog-actions>
+
