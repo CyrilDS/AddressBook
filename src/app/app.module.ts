@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BookComponent } from './book/book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,8 +14,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
-  declarations: [AppComponent, BookComponent, NavbarComponent],
+  declarations: [AppComponent, BookComponent, NavbarComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
