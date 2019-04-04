@@ -17,4 +17,6 @@ a:hover {
 .mat-toolbar-single-row {
   height: 70px;
   box-shadow: 1px 5px 4px -6px grey;
+  display: flex;
+  justify-content: space-between;
 }

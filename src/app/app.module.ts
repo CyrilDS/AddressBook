@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     BookComponent,
     NavbarComponent,
     AddressComponent,
-    routingComponent
+    routingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
