@@ -11,8 +11,9 @@ import { Locality } from './locality';
 })
 export class AddressComponent implements OnInit {
 
-  addressModel = new Address("", "", "", "", "", "", new Locality("", ""));
   localityModel = new Locality("", "");
+  addressModel = new Address("", "", "", "", "", "", this.localityModel);
+  
   localities: Locality[];
   private zipCode: string;
   private city: string;

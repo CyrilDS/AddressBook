@@ -58,8 +58,13 @@
               <mat-option  *ngFor="let city of localities" value="option" [(ngModel)]="localityModel.city" #zipCode="ngModel" class="form-control" name="zipCode">{{city.nomCommune}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <button mat-raised-button color="primary" (click)="allCityByZipcode(localityModel.zipCode)">Primary</button>
+          <button mat-raised-button color="primary" (click)="allCityByZipcode(localityModel.zipCode)">get city</button>
+          LOCALITY OBJECT : {{localityForm.value | json }}
+          LOCALITY OBJECT : {{localityModel | json }} 
         </form>
+        ADDRESS OBJECT : {{addressForm.value | json }}
+        ADDRESS OBJECT : {{addressModel | json }}
+       
       </div>
     </div>
   </form>
