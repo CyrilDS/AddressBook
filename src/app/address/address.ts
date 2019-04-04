@@ -1,3 +1,5 @@
+import { Locality } from './locality';
+
 export class Address {
     constructor(
         private type: string,
@@ -6,7 +8,7 @@ export class Address {
         private localisationComplement: string,
         private label: string,
         private distributionServices: string,
-        private zipCode: string,
-        private locality: string
+        private locality: Locality,
+
     ) { }
 }

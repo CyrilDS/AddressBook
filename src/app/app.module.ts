@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material';
+
+
 import { AddressComponent } from './address/address.component';
 
 import { HomeComponent } from './home/home.component';
@@ -47,9 +50,10 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

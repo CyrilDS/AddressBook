@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddressService } from '../services/address.service';
 import { MatDialog } from '@angular/material';
 import { Address } from './address';
+import { Locality } from './locality';
 
 @Component({
   selector: 'app-address',
@@ -10,29 +11,27 @@ import { Address } from './address';
 })
 export class AddressComponent implements OnInit {
 
+  addressModel = new Address("", "", "", "", "", "", new Locality("", ""));
+  localityModel = new Locality("", "");
+  localities: Locality[];
+  private zipCode: string;
+
   ngOnInit() { }
 
-  public addresses = [];
+  constructor(private service: AddressService, public dialog: MatDialog) { }
 
-  constructor(private addressService: AddressService, public dialog: MatDialog) { }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(FormDialog);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+  allCityByZipcode(zipCode: string) {
+    this.service.getCity(zipCode).subscribe(
+      data => {
+        this.localities = data;
+        console.log(data);
+      }
+    )
   }
-}
-
-@Component({
-  selector: 'form-dialog'
-})
-export class FormDialog {
-  addressModel = new Address("", "", "", "", "", "", "", "");
-
-  constructor(private addressService: AddressService) { }
 
   onSubmit() {
-    this.addressService.create(this.addressModel);
+    this.service.create(this.addressModel);
   }
+
+
 }
