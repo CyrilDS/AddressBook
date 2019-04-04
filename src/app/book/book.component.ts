@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { Address } from './Address';
-import { map } from 'rxjs/operators';
-import { iteratorToArray } from '@angular/animations/browser/src/util';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-book',
