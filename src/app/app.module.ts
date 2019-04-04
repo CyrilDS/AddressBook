@@ -23,9 +23,6 @@ import { AddressComponent } from './address/address.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [AppComponent, BookComponent, NavbarComponent, HomeComponent],
-=======
   declarations: [
     AppComponent,
     BookComponent,
@@ -33,7 +30,6 @@ import { HomeComponent } from './home/home.component';
     AddressComponent,
     routingComponent
   ],
->>>>>>> 549b4110480cab7ff8e0b856beba8db79162d8a2
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,9 +46,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatIconModule,
-    MatDialogModule,
-
-
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
