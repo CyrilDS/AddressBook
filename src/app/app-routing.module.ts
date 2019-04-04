@@ -5,6 +5,11 @@ import { AddressComponent } from './address/address.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   { path: 'admin', component: BookComponent },
   { path: 'address', component: AddressComponent },
   { path: 'home', component: HomeComponent }

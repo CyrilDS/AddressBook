@@ -13,10 +13,14 @@ a:hover {
   transition: 0.2s;
 }
 
-.mat-toolbar-row,
-.mat-toolbar-single-row {
+.mat-toolbar {
   height: 70px;
   box-shadow: 1px 5px 4px -6px grey;
   display: flex;
   justify-content: space-between;
+}
+
+img {
+  width: 15%;
+  margin-bottom: -3%;
 }
