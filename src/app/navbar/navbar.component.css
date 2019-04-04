@@ -1,24 +1,20 @@
 ul li {
   display: inline;
-  margin-left: 15px;
-}
-
-mat-toolbar {
-  display: flex;
-  justify-content: center;
-  background-color: #2196f3;
-  min-height: 64px;
-  align-items: center;
-  box-shadow: black;
-  top: 0;
-  left: auto;
-  right: 0;
+  margin-left: 22px;
 }
 
 a {
-  color: antiquewhite;
-  background-color: transparent;
-  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  border-radius: 50%;
-  box-sizing: border-box;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkorange;
+  transition: 0.2s;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 70px;
+  box-shadow: 1px 5px 4px -6px grey;
 }
