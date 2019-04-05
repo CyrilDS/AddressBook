@@ -6,18 +6,16 @@ import { Observable } from 'rxjs';
 import { APIS } from './apis';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AddressService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCity(zipCode: string): Observable<Locality[]> {
-    return this.http.get<Locality[]>(APIS.GET_CITY_BY_ZIPCODE + zipCode)
+    return this.http.get<Locality[]>(APIS.GET_CITY_BY_ZIPCODE + zipCode);
   }
 
   create(address: Address): Observable<Response> {
     return this.http.post<Response>(APIS.CREATE_ADDRESS, address);
   }
-
 }

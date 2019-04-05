@@ -4,75 +4,130 @@
   </mat-card-header>
   <mat-card-content>
     <mat-dialog-content class="mat-typography">
-      <form #addressForm='ngForm' novalidate>
+      <form #addressForm="ngForm" novalidate>
         <div>
           <div>
             <label>Type</label>
             <div *ngFor="let type of types">
               <label>
-                <input type="radio" name="type" [(ngModel)]="addressModel.type" [value]="type.value">
-                {{type.display}}
+                <input
+                  type="radio"
+                  name="type"
+                  [(ngModel)]="addressModel.type"
+                  [value]="type.value"
+                />
+                {{ type.display }}
               </label>
             </div>
           </div>
           <p>
             <mat-form-field>
               <label>Identity</label>
-              <input matInput required type="text" #identity="ngModel" class="form-control" name="identity"
-                [(ngModel)]="addressModel.identity">
+              <input
+                matInput
+                required
+                type="text"
+                #identity="ngModel"
+                class="form-control"
+                name="identity"
+                [(ngModel)]="addressModel.identity"
+              />
               <mat-hint>identity is required</mat-hint>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field>
               <label>Identification</label>
-              <input matInput required type="text" #identification="ngModel" class="form-control" name="identification"
-                [(ngModel)]="addressModel.identification">
+              <input
+                matInput
+                required
+                type="text"
+                #identification="ngModel"
+                class="form-control"
+                name="identification"
+                [(ngModel)]="addressModel.identification"
+              />
               <mat-hint>identification is required</mat-hint>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field>
               <label>Localisation Complement</label>
-              <input matInput required type="text" #localisationComplement="ngModel" class="form-control"
-                name="localisationComplement" [(ngModel)]="addressModel.localisationComplement">
+              <input
+                matInput
+                required
+                type="text"
+                #localisationComplement="ngModel"
+                class="form-control"
+                name="localisationComplement"
+                [(ngModel)]="addressModel.localisationComplement"
+              />
               <mat-hint>localisation complement is required</mat-hint>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field>
               <label>Label</label>
-              <input matInput required type="text" #label="ngModel" class="form-control" name="label"
-                [(ngModel)]="addressModel.label">
+              <input
+                matInput
+                required
+                type="text"
+                #label="ngModel"
+                class="form-control"
+                name="label"
+                [(ngModel)]="addressModel.label"
+              />
               <mat-hint>label is required</mat-hint>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field>
               <label>Distribution Service</label>
-              <input matInput required type="text" #distributionServices="ngModel" class="form-control"
-                name="distributionServices" [(ngModel)]="addressModel.distributionServices">
+              <input
+                matInput
+                required
+                type="text"
+                #distributionServices="ngModel"
+                class="form-control"
+                name="distributionServices"
+                [(ngModel)]="addressModel.distributionServices"
+              />
               <mat-hint>Distribution Services is required</mat-hint>
             </mat-form-field>
           </p>
           <div>
             <mat-form-field>
-              <input matInput required type="text" #locality="ngModel" class="form-control" name="locality"
-                [(ngModel)]="locality.zipCode" (ngModelChange)="eventHandler(locality.zipCode)" ngDefaultControl>
+              <input
+                matInput
+                required
+                type="text"
+                #locality="ngModel"
+                class="form-control"
+                name="locality"
+                [(ngModel)]="locality.zipCode"
+                (ngModelChange)="eventHandler(locality.zipCode)"
+                ngDefaultControl
+              />
             </mat-form-field>
 
             <mat-form-field>
               <mat-label>City</mat-label>
               <mat-select>
-                <mat-option *ngFor="let locality of localities" [(ngModel)]="locality.city" name="city"
-                  [value]="locality.nomCommune" (click)="getInnerText(locality.nomCommune)">
-                  {{locality.nomCommune}}
+                <mat-option
+                  *ngFor="let locality of localities"
+                  [(ngModel)]="locality.city"
+                  name="city"
+                  [value]="locality.nomCommune"
+                  (click)="getInnerText(locality.nomCommune)"
+                  ngDefaultControl
+                >
+                  {{ locality.nomCommune }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
 
-            ADDRESS OBJECT : {{addressForm.value | json }}
-            ADDRESS OBJECT : {{addressModel | json }}
+            ADDRESS OBJECT : {{ addressForm.value | json }} ADDRESS OBJECT :
+            {{ addressModel | json }}
           </div>
         </div>
       </form>
