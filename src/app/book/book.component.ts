@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { Address } from '../address/Address';
-
+import { Address } from '../address/address';
 
 @Component({
   selector: 'app-book',
@@ -10,10 +9,10 @@ import { Address } from '../address/Address';
 })
 export class BookComponent {
   private addresses: Address[] = [];
-  loading: boolean = false;
+  loading = false;
   result: boolean;
 
-  constructor(private service: BookService) { }
+  constructor(private service: BookService) {}
 
   getAll() {
     console.log('STARTING');
@@ -21,7 +20,7 @@ export class BookComponent {
     this.service.findAll().subscribe(res => {
       this.loading = !res;
       this.result = res;
-      console.log(res)
+      console.log(res);
     });
   }
 }
