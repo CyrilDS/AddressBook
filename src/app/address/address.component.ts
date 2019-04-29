@@ -3,6 +3,7 @@ import { AddressService } from '../services/address.service';
 import { MatDialog } from '@angular/material';
 import { Address } from './address';
 import { Locality } from './locality';
+import { StringMap } from '@angular/core/src/render3/jit/compiler_facade_interface';
 
 @Component({
   selector: 'app-address',
@@ -14,7 +15,7 @@ export class AddressComponent {
   constructor(private service: AddressService, public dialog: MatDialog) { }
 
   localities: Locality[];
-  locality = new Locality("", "");
+  locality = new Locality(0,"", "");
   addressModel = new Address("", "", "", "", "", "", this.locality);
 
   public types = [
@@ -22,9 +23,12 @@ export class AddressComponent {
     { value: 'ENTERPRISE', display: 'Enterprise' }
   ];
 
-  getInnerText(city) {
-    console.log(city)
+  getInnerText(id: number, city: string) {
+    console.log(id);
+    console.log(city);
     this.locality.city = city;
+    this.locality.id = id;
+
   }
 
   eventHandler(zipCode: string) {

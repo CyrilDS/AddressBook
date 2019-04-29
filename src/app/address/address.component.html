@@ -117,15 +117,14 @@
                   *ngFor="let locality of localities"
                   [(ngModel)]="locality.city"
                   name="city"
-                  [value]="locality.nomCommune"
-                  (click)="getInnerText(locality.nomCommune)"
+                  [value]="locality.city"
+                  (click)="getInnerText(locality.id, locality.city)"
                   ngDefaultControl
                 >
-                  {{ locality.nomCommune }}
+                  {{ locality.city }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-
             ADDRESS OBJECT : {{ addressForm.value | json }} ADDRESS OBJECT :
             {{ addressModel | json }}
           </div>
