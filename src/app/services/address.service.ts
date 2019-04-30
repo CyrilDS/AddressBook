@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Address } from '../address/address';
+
 import { HttpClient } from '@angular/common/http';
 import { Locality } from '../address/locality';
 import { Observable } from 'rxjs';
 import { APIS } from './apis';
+import { Address } from '../address/Address';
 
 @Injectable({
   providedIn: 'root',
