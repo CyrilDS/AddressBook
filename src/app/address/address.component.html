@@ -125,6 +125,22 @@
                 </mat-option>
               </mat-select>
             </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>District</mat-label>
+              <mat-select>
+                <mat-option
+                  *ngFor="let locality of localities"
+                  [(ngModel)]="locality.district"
+                  name="district"
+                  [value]="locality.district"
+                  (click)="getInnerText(locality.id, locality.city)"
+                  ngDefaultControl
+                >
+                  {{ locality.district }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
             ADDRESS OBJECT : {{ addressForm.value | json }} ADDRESS OBJECT :
             {{ addressModel | json }}
           </div>

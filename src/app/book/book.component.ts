@@ -7,6 +7,7 @@ export interface Locality {
   id: number;
   zipCode: string;
   city: string;
+  district: string;
 }
 @Component({
   selector: 'app-book',
@@ -18,7 +19,7 @@ export class BookComponent {
   loading: boolean = false;
   result: boolean;
   result1: string;
-  
+
   constructor(private service: BookService) { }
 
   getAll() {
@@ -28,7 +29,7 @@ export class BookComponent {
       this.loading = !res;
       this.result = res;
       console.log(res)
-    });  
+    });
   }
   getList(){
     this.service.listAll().subscribe(res =>{
