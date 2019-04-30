@@ -11,6 +11,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'admin', component: BookComponent },
+  
   { path: 'address', component: AddressComponent },
   { path: 'home', component: HomeComponent }
 ];
@@ -24,5 +25,6 @@ export class AppRoutingModule {}
 export const routingComponent = [
   BookComponent,
   AddressComponent,
-  HomeComponent
+  HomeComponent,
+  
 ];

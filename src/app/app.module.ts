@@ -20,12 +20,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
-
+import {MatPaginatorModule} from '@angular/material';
 
 
 import { AddressComponent } from './address/address.component';
 
 import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     AddressComponent,
     routingComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,9 @@ import { HomeComponent } from './home/home.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     MatFormFieldModule,
+    MatPaginatorModule, 
+    MatSortModule, 
+    
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
