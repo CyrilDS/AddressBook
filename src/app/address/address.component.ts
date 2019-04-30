@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { AddressService } from '../services/address.service';
 import { MatDialog } from '@angular/material';
-import { Address } from './address';
+
 import { Locality } from './locality';
 import { StringMap } from '@angular/core/src/render3/jit/compiler_facade_interface';
+import { Address } from './Address';
 
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css']
+  styleUrls: ['./address.component.css'],
 })
 export class AddressComponent {
-
-  constructor(private service: AddressService, public dialog: MatDialog) { }
+  constructor(private service: AddressService, public dialog: MatDialog) {}
 
   localities: Locality[];
-  locality = new Locality(0,"", "");
-  addressModel = new Address("", "", "", "", "", "", this.locality);
+  locality = new Locality(0, '', '');
+  addressModel = new Address('', '', '', '', '', '', this.locality);
 
   public types = [
     { value: 'PARTICULAR', display: 'Particular' },
-    { value: 'ENTERPRISE', display: 'Enterprise' }
+    { value: 'ENTERPRISE', display: 'Enterprise' },
   ];
 
   getInnerText(id: number, city: string) {
@@ -28,7 +28,6 @@ export class AddressComponent {
     console.log(city);
     this.locality.city = city;
     this.locality.id = id;
-
   }
 
   eventHandler(zipCode: string) {
@@ -38,23 +37,17 @@ export class AddressComponent {
   }
 
   allCityByZipcode(zipCode: string) {
-    this.service.getCity(zipCode).subscribe(
-      data => {
-        this.locality.zipCode = zipCode;
-        this.localities = data;
-        console.log(data);
-      }
-    )
+    this.service.getCity(zipCode).subscribe(data => {
+      this.locality.zipCode = zipCode;
+      this.localities = data;
+      console.log(data);
+    });
   }
 
   onSubmit() {
-    console.log(this.addressModel)
-    this.service.create(this.addressModel).subscribe(
-      res => {
-        alert("STATUS: " + res);
-      }
-    );
+    console.log(this.addressModel);
+    this.service.create(this.addressModel).subscribe(res => {
+      alert('STATUS: ' + res);
+    });
   }
-
-
 }
