@@ -26,6 +26,7 @@ import {MatPaginatorModule} from '@angular/material';
 import { AddressComponent } from './address/address.component';
 
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { HomeComponent } from './home/home.component';
     AddressComponent,
     routingComponent,
     HomeComponent,
+    FooterComponent,
     
   ],
   imports: [
