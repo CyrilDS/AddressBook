@@ -11,7 +11,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'admin', component: BookComponent },
-  
   { path: 'address', component: AddressComponent },
   { path: 'home', component: HomeComponent }
 ];

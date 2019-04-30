@@ -6,38 +6,26 @@
   Get Adresses List
 </button>
 
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
-
-    <!-- ID Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-    </ng-container>
-
-    <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
-      <td mat-cell *matCellDef="let row"> {{row.zipCode}}% </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.city}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-    </tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-</div>
-
-<ul *ngFor="let res of result1">
+<!-- <ul *ngFor="let res of result1">
   <li>{{ res | json }}</li>
-</ul>
+</ul> -->
+
+<table  style="width:100%">
+  <tr >
+    <th>id</th>
+    <th>zipCode</th> 
+    <th>City</th>
+  </tr>
+  <tr *ngFor="let res of result1">
+    <td>{{res.id | json}}</td>
+  </tr>
+  <tr *ngFor="let res of result1">
+    <td>{{res.zipCode | json }}</td>
+  </tr>
+  <tr *ngFor="let res of result1">
+    <td>{{res.city | json }}</td>
+  </tr>
+</table>
 
 <div *ngIf="loading">
   <mat-spinner strokeWidth="3" [diameter]="50"></mat-spinner>

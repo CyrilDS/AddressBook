@@ -50,9 +50,7 @@ import { HomeComponent } from './home/home.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     MatFormFieldModule,
-    MatPaginatorModule, 
-    MatSortModule, 
-    
+    MatPaginatorModule,     
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
