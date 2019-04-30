@@ -3,6 +3,11 @@ import { BookService } from '../services/book.service';
 import { Address } from '../address/Address';
 import { Locality } from '../address/locality';
 
+export interface Locality {
+  id: number;
+  zipCode: string;
+  city: string;
+}
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
@@ -13,6 +18,7 @@ export class BookComponent {
   loading: boolean = false;
   result: boolean;
   result1: string;
+  
   constructor(private service: BookService) { }
 
   getAll() {

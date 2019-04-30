@@ -10,21 +10,21 @@
   <li>{{ res | json }}</li>
 </ul> -->
 
-<table  style="width:100%">
-  <tr >
+<table style="width:100%" class="table table-bordered table-sm">
+  <thead>
+  <tr>
     <th>id</th>
-    <th>zipCode</th> 
-    <th>City</th>
+    <th>City</th> 
+    <th>zipCode</th>
   </tr>
+</thead>
+<tbody>
   <tr *ngFor="let res of result1">
     <td>{{res.id | json}}</td>
+    <td>{{res.nomCommune | json}}</td>
+    <td>{{res.codePostal | json}}</td>
   </tr>
-  <tr *ngFor="let res of result1">
-    <td>{{res.zipCode | json }}</td>
-  </tr>
-  <tr *ngFor="let res of result1">
-    <td>{{res.city | json }}</td>
-  </tr>
+</tbody>
 </table>
 
 <div *ngIf="loading">
