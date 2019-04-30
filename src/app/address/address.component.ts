@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material';
 
 import { Locality } from './locality';
 import { StringMap } from '@angular/core/src/render3/jit/compiler_facade_interface';
-import { Address } from './Address';
+import { Address } from './address';
 
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css'],
+  styleUrls: ['./address.component.css']
 })
 export class AddressComponent {
   constructor(private service: AddressService, public dialog: MatDialog) {}
@@ -20,7 +20,7 @@ export class AddressComponent {
 
   public types = [
     { value: 'PARTICULAR', display: 'Particular' },
-    { value: 'ENTERPRISE', display: 'Enterprise' },
+    { value: 'ENTERPRISE', display: 'Enterprise' }
   ];
 
   getInnerText(id: number, city: string, district: string) {

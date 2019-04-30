@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Locality } from '../address/locality';
 import { Observable } from 'rxjs';
 import { APIS } from './apis';
-import { Address } from '../address/Address';
+import { Address } from '../address/address';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AddressService {
   constructor(private http: HttpClient) {}
