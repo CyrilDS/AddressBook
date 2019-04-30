@@ -9,6 +9,5 @@ export class Address {
         private label: string,
         private distributionServices: string,
         private locality: Locality,
-
     ) { }
 }

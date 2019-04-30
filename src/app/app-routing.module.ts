@@ -24,5 +24,6 @@ export class AppRoutingModule {}
 export const routingComponent = [
   BookComponent,
   AddressComponent,
-  HomeComponent
+  HomeComponent,
+  
 ];
