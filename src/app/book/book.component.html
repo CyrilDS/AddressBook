@@ -17,20 +17,22 @@
       <th>City</th>
       <th>District</th>
       <th>ZipCode</th>
+      <th>Map</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let locality of toto.content">
-
       <td>{{ locality.id | json }}</td>
       <td>{{ locality.city | json }}</td>
       <td>{{ locality.district | json }}</td>
       <td>{{ locality.zipCode | json }}</td>
-      
+      <td title="Hello">
+        <button mat-raised-button color="primary" (click)="getAll()">
+          Show map
+        </button>
+      </td>
     </tr>
   </tbody>
-
-  
 </table>
 
 <div *ngIf="loading">
