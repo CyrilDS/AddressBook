@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { Address } from '../address/address';
 import { Locality } from '../address/locality';
@@ -18,7 +18,11 @@ export class BookComponent {
   private addresses: Address[] = [];
   loading = false;
   result: boolean;
-  result1: string;
+  toto: object;
+  size: number;
+  page: number;
+  url: string;
+  content = [];
 
   constructor(private service: BookService) {}
 
@@ -28,12 +32,11 @@ export class BookComponent {
     this.service.findAll().subscribe(res => {
       this.loading = !res;
       this.result = res;
-      console.log(res);
     });
   }
   getList() {
     this.service.listAll().subscribe(res => {
-      this.result1 = res;
+      this.toto = res;
       console.log(res);
     });
   }

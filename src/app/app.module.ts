@@ -21,7 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material';
-
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { AddressComponent } from './address/address.component';
 
 import { HomeComponent } from './home/home.component';

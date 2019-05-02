@@ -15,15 +15,13 @@ export class BookService {
   findAll(): Observable<boolean> {
     return this.http.get<boolean>(APIS.ADRESSES_CSV).pipe(
       map(data => {
-        console.log(data);
         return data;
       })
     );
   }
-  listAll(): Observable<string> {
-    return this.http.get<string>(APIS.GET_ALL_CITIES).pipe(
+  listAll(): Observable<object> {
+    return this.http.get<object>(APIS.GET_ALL_CITIES).pipe(
       map(data => {
-        console.log(data);
         return data;
       })
     );
